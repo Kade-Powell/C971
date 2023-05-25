@@ -1,33 +1,30 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using C971.Services;
-using C971.Views;
 
 namespace C971
 {
     public partial class App : Application
     {
-
-        public App ()
+        public App()
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new MainPage());
         }
 
-        protected override void OnStart ()
+        protected override void OnStart()
         {
         }
 
-        protected override void OnSleep ()
+        protected override void OnSleep()
         {
         }
 
-        protected override void OnResume ()
+        protected override void OnResume()
         {
         }
+
     }
 }
 
